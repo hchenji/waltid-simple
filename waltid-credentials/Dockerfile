@@ -2,10 +2,10 @@ FROM docker.io/node:20-alpine as buildstage
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
-COPY ./package.json /build/
+COPY waltid-credentials/package.json /build/
 WORKDIR /build
 RUN pnpm install
-COPY ./ /build
+COPY waltid-credentials/ /build
 RUN pnpm run build
 # RUN
 FROM docker.io/node:20-alpine
