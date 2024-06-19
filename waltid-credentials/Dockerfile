@@ -1,4 +1,7 @@
-FROM docker.io/gplane/pnpm as buildstage
+FROM docker.io/node:20-alpine as buildstage
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 COPY ./package.json /build/
 WORKDIR /build
 RUN pnpm install

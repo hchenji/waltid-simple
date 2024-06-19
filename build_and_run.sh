@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define your Dockerfile directories and corresponding service names
-DOCKERFILE_DIRS=("waltid-wallet-api" "waltid-web-wallet" "waltid-issuer-api" "waltid-verifier-api" "waltid-web-portal")
-SERVICES=("wallet-api" "waltid-web-wallet" "issuer-api" "verifier-api" "waltid-web-portal")
+DOCKERFILE_DIRS=("waltid-credentials" "waltid-wallet-api" "waltid-web-wallet" "waltid-issuer-api" "waltid-verifier-api" "waltid-web-portal")
+SERVICES=("vc-repository" "wallet-api" "waltid-web-wallet" "issuer-api" "verifier-api" "waltid-web-portal")
 
 # Build Docker images
 for ((i=0; i<${#DOCKERFILE_DIRS[@]}; i++)); do
@@ -12,7 +12,7 @@ for ((i=0; i<${#DOCKERFILE_DIRS[@]}; i++)); do
   echo "Building image for ${SERVICE_NAME} using ${DOCKERFILE_PATH}"
 
   # Build Docker image from the root directory
-  docker build -t "waltid/${SERVICE_NAME}" -f "${DOCKERFILE_PATH}" .
+  docker build -t "wsrg/${SERVICE_NAME}" -f "${DOCKERFILE_PATH}" .
 done
 # Change directory to where docker-compose.yml is located
 COMPOSE_DIR="docker-compose"
