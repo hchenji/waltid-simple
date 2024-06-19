@@ -29,15 +29,15 @@ services:
       - ./verifier-api/config:/waltid-verifier-api/config
 
   waltid-web-wallet:
-    image: docker.io/waltid/waltid-web-wallet:${VERSION_TAG:-latest}
+    image: docker.io/wsrg/waltid-web-wallet:latest
     pull_policy: always
     environment:
       NUXT_PUBLIC_ISSUER_CALLBACK_URL: "http://localhost:$WALLET_FRONTEND_PORT"
       PORT: $WALLET_FRONTEND_PORT
 
   web-portal:
-    platform: linux/x86_64
-    image: docker.io/waltid/portal:${VERSION_TAG:-latest}
+    # platform: linux/x86_64
+    image: docker.io/wsrg/waltid-web-portal:latest
     pull_policy: always
     environment:
       NEXT_PUBLIC_VC_REPO: "http://localhost:$VC_REPO_PORT"
@@ -47,8 +47,8 @@ services:
       PORT: $WEB_PORTAL_PORT
 
   vc-repo:
-    platform: linux/x86_64
-    image: docker.io/waltid/vc-repository:latest
+    # platform: linux/x86_64
+    image: docker.io/wsrg/vc-repository:latest
     pull_policy: always
     environment:
       PORT: $VC_REPO_PORT
