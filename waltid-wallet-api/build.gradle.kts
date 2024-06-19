@@ -141,7 +141,7 @@ dependencies {
 
     // Web push
     // implementation("dev.blanke.webpush:webpush:6.1.1") // alternative
-    implementation("com.interaso:webpush:1.1.1")
+    implementation("com.interaso:webpush:1.2.0")
 
     // Config
     implementation("com.sksamuel.hoplite:hoplite-core:2.8.0.RC3")
