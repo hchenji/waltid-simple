@@ -149,7 +149,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
                 implementation("io.ktor:ktor-client-logging-jvm:$ktor_version")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.8.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:1.8.1")
                 implementation("io.ktor:ktor-client-okhttp:$ktor_version")
 
             }
