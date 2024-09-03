@@ -7,6 +7,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
+  "pnpm": {
+    "overrides": {
+      "nuxt-security>cheerio": "1.0.0-rc.12"
+    }
+  },
   "devDependencies": {
     "@nuxt/content": "^2.12.0",
     "@nuxt/devtools": "1.0.8",
