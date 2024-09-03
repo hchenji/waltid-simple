@@ -77,9 +77,10 @@ services:
       PORT: $WEB_PORTAL_PORT
 
   vc-repo:
-    platform: linux/x86_64
-    image: docker.io/waltid/vc-repository:latest
-    pull_policy: always
+    # platform: linux/x86_64
+    image: docker.io/wsrg/vc-repository:staging
+    # image: docker.io/waltid/vc-repository:latest
+    # pull_policy: always
     depends_on:
       - caddy
     environment:
